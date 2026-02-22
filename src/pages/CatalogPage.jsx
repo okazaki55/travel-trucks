@@ -5,17 +5,16 @@ import CamperCard from "../components/CamperCard";
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
-  // Redux store'dan verileri çekiyoruz
-  const { items, isLoading, error } = useSelector((state) => state.campers);
-  const [visibleCount, setVisibleCount] = useState(4);
+  const { items, isLoading, error, hasMore } = useSelector(
+    (state) => state.campers,
+  );
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    // Sayfa ekrana ilk basıldığında API'den verileri getir
-    dispatch(fetchCampers());
-  }, [dispatch]);
+    dispatch(fetchCampers({ page, limit: 4 }));
+  }, [dispatch, page]);
 
-  // Kriter: Asenkron işlemler için Loading indicator (Yükleniyor göstergesi)
-  if (isLoading) {
+  if (isLoading && page === 1 && items.length === 0) {
     return (
       <div style={{ textAlign: "center", marginTop: "50px", fontSize: "24px" }}>
         🔄 Karavanlar yükleniyor...
@@ -23,7 +22,6 @@ const CatalogPage = () => {
     );
   }
 
-  // Hata durumu
   if (error) {
     return (
       <div style={{ textAlign: "center", marginTop: "50px", color: "red" }}>
@@ -32,9 +30,8 @@ const CatalogPage = () => {
     );
   }
 
-  const displayedItems = items.slice(0, visibleCount);
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4);
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (
@@ -69,16 +66,15 @@ const CatalogPage = () => {
         }}
       >
         <div style={{ width: "100%" }}>
-          {displayedItems.length > 0 ? (
-            displayedItems.map((camper) => (
-              <CamperCard key={camper.id} camper={camper} />
-            ))
-          ) : (
-            <p>Hiç karavan bulunamadı.</p>
-          )}
+          {items.length > 0
+            ? items.map((camper) => (
+                <CamperCard key={camper.id} camper={camper} />
+              ))
+            : !isLoading && <p>Hiç karavan bulunamadı.</p>}
         </div>
+
         {/* Eğer gösterilen sayı, toplam item sayısından azsa butonu göster */}
-        {visibleCount < items.length && (
+        {hasMore && !isLoading && (
           <button
             onClick={handleLoadMore}
             style={{
@@ -98,6 +94,12 @@ const CatalogPage = () => {
           >
             Load More
           </button>
+        )}
+
+        {isLoading && page > 1 && (
+          <p style={{ marginTop: "20px", color: "#475467" }}>
+            Daha fazla karavan getiriliyor...
+          </p>
         )}
       </div>
     </div>
