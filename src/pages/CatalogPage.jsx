@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCampers } from "../redux/campersSlice";
+import FilterSidebar from "../components/FilterSidebar";
 import CamperCard from "../components/CamperCard";
 
 const CatalogPage = () => {
@@ -44,19 +45,10 @@ const CatalogPage = () => {
         gap: "40px",
       }}
     >
-      {/* Sol Taraf: Filtreleme Alanı (Şimdilik Boş Bırakıyoruz) */}
-      <div style={{ width: "300px" }}>
-        <h3 style={{ marginBottom: "20px" }}>Filtreler Buraya Gelecek</h3>
-        <div
-          style={{
-            height: "500px",
-            border: "1px dashed #ccc",
-            borderRadius: "10px",
-          }}
-        ></div>
+      <div style={{ width: "360px", flexShrink: 0 }}>
+        <FilterSidebar setPage={setPage} />
       </div>
 
-      {/* Sağ Taraf: Karavan Listesi */}
       <div
         style={{
           flex: 1,
@@ -73,7 +65,6 @@ const CatalogPage = () => {
             : !isLoading && <p>Hiç karavan bulunamadı.</p>}
         </div>
 
-        {/* Eğer gösterilen sayı, toplam item sayısından azsa butonu göster */}
         {hasMore && !isLoading && (
           <button
             onClick={handleLoadMore}
@@ -84,7 +75,7 @@ const CatalogPage = () => {
               color: "#101828",
               border: "1px solid #DADDE1",
               borderRadius: "200px",
-              cursor: "pointer", // Kriter: cursor pointer olmalı
+              cursor: "pointer",
               fontWeight: "500",
               fontSize: "16px",
               transition: "border-color 0.2s",

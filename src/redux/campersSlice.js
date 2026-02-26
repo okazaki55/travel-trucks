@@ -5,9 +5,29 @@ export const fetchCampers = createAsyncThunk(
   "campers/fetchCampers",
   async ({ page = 1, limit = 4 } = {}, thunkAPI) => {
     try {
-      const response = await api.get("/campers", {
-        params: { page, limit },
+      const state = thunkAPI.getState();
+
+      const { location, form, features } = state.filters;
+
+      const params = {
+        page,
+        limit,
+      };
+
+      if (location.trim() !== "") {
+        params.location = location.trim();
+      }
+
+      if (form !== "") {
+        params.form = form;
+      }
+
+      features.forEach((feature) => {
+        params[feature] = true;
       });
+
+      const response = await api.get("/campers", { params });
+
       const data = response.data.items ? response.data.items : response.data;
       return data;
     } catch (error) {
