@@ -1,0 +1,121 @@
+.sidebar {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: #101828;
+  font-weight: 500;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 16px 16px 44px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.filterSubtitle {
+  color: #475467;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  border-bottom: 1px solid #dadde1;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.buttonGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filterBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border-radius: 10px;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.2s;
+}
+
+.equipmentBtn {
+  width: calc(50% - 5px);
+  padding: 16px;
+}
+
+.typeBtn {
+  width: calc(33.33% - 7px);
+  padding: 16px 8px;
+}
+
+.btnUnselected {
+  border: 1px solid #dadde1;
+}
+
+.btnSelected {
+  border: 1px solid #e44848;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.btnLabel {
+  font-size: 16px;
+  color: #101828;
+  font-weight: 500;
+  text-align: center;
+}
+
+.typeBtnLabel {
+  font-size: 14px;
+  color: #101828;
+  font-weight: 500;
+  text-align: center;
+}
+
+.searchBtn {
+  width: 160px;
+  padding: 16px 0;
+  background-color: #e44848;
+  color: white;
+  border: none;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.searchBtn:hover {
+  background-color: #d84343;
+}

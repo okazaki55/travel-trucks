@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "./pages/HomePage.jsx";
-import CatalogPage from "./pages/CatalogPage.jsx";
-import DetailsPage from "./pages/DetailsPage.jsx";
-import Header from "./components/Header.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import CatalogPage from "./pages/CatalogPage/CatalogPage.jsx";
+import DetailsPage from "./pages/DetailsPage/DetailsPage.jsx";
+import Header from "./components/Header/Header.jsx";
 
 function App() {
   return (
