@@ -12,16 +12,21 @@ const FilterSidebar = ({ setPage }) => {
   const { location, form, features } = useSelector((state) => state.filters);
 
   const equipmentOptions = [
-    { id: "AC", label: "AC", icon: "❄️" },
-    { id: "kitchen", label: "Kitchen", icon: "🍳" },
-    { id: "TV", label: "TV", icon: "📺" },
-    { id: "bathroom", label: "Bathroom", icon: "🚿" },
+    { id: "AC", label: "AC", iconName: "icon-ac" },
+    { id: "automatic", label: "Automatic", iconName: "icon-transmission" },
+    { id: "kitchen", label: "Kitchen", iconName: "icon-kitchen" },
+    { id: "TV", label: "TV", iconName: "icon-tv" },
+    { id: "bathroom", label: "Bathroom", iconName: "icon-bathroom" },
   ];
 
   const typeOptions = [
-    { id: "panelTruck", label: "Van", icon: "🚐" },
-    { id: "fullyIntegrated", label: "Fully Integrated", icon: "🚌" },
-    { id: "alcove", label: "Alcove", icon: "🛻" },
+    { id: "panelTruck", label: "Van", iconName: "icon-van" },
+    {
+      id: "fullyIntegrated",
+      label: "Fully Integrated",
+      iconName: "icon-integrated",
+    },
+    { id: "alcove", label: "Alcove", iconName: "icon-alcove" },
   ];
 
   const handleSearch = () => {
@@ -34,7 +39,10 @@ const FilterSidebar = ({ setPage }) => {
       <div className={styles.formGroup}>
         <label className={styles.label}>Location</label>
         <div className={styles.inputWrapper}>
-          <span className={styles.inputIcon}>📍</span>
+          <i
+            className={`icon-location ${styles.inputIcon}`}
+            style={{ fontSize: "20px" }}
+          ></i>
           <input
             type="text"
             placeholder="City"
@@ -58,7 +66,10 @@ const FilterSidebar = ({ setPage }) => {
                 onClick={() => dispatch(toggleFeature(item.id))}
                 className={`${styles.filterBtn} ${styles.equipmentBtn} ${isSelected ? styles.btnSelected : styles.btnUnselected}`}
               >
-                <span className={styles.icon}>{item.icon}</span>
+                <i
+                  className={`${item.iconName} ${styles.icon}`}
+                  style={{ fontSize: "32px" }}
+                ></i>
                 <span className={styles.btnLabel}>{item.label}</span>
               </button>
             );
@@ -77,7 +88,10 @@ const FilterSidebar = ({ setPage }) => {
                 onClick={() => dispatch(setForm(item.id))}
                 className={`${styles.filterBtn} ${styles.typeBtn} ${isSelected ? styles.btnSelected : styles.btnUnselected}`}
               >
-                <span className={styles.icon}>{item.icon}</span>
+                <i
+                  className={`${item.iconName} ${styles.icon}`}
+                  style={{ fontSize: "32px" }}
+                ></i>
                 <span className={styles.typeBtnLabel}>{item.label}</span>
               </button>
             );

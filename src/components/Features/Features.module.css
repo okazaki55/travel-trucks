@@ -1,0 +1,53 @@
+/* src/components/Features.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Rozetlerin (Badges) Alanı */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 44px; /* Araç detayları başlığıyla arasındaki boşluk */
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background-color: #f3f4f6; /* Figma'daki açık gri arkaplan */
+  border-radius: 100px; /* Tam yuvarlak kenarlar */
+  font-size: 16px;
+  font-weight: 500;
+  color: #101828;
+}
+
+/* Araç Detayları (Vehicle Details) Alanı */
+.detailsTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #101828;
+  border-bottom: 1px solid #dadde1;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between; /* Yazıları sağa ve sola yaslar */
+  font-size: 18px;
+  font-weight: 500;
+  color: #101828;
+}
+
+.detailLabel {
+  color: #101828; /* İstersen Figma'da daha açıksa #475467 yapabilirsin */
+}

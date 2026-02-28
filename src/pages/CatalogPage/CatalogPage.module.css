@@ -55,3 +55,21 @@
   margin-top: 20px;
   color: #475467;
 }
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 40px 24px;
+    gap: 32px;
+  }
+
+  .sidebarWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 16px;
+  }
+}
