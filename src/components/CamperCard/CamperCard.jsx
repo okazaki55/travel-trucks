@@ -56,6 +56,30 @@ const CamperCard = ({ camper }) => {
           {camper.description?.substring(0, 60)}...
         </p>
 
+        <div className={styles.badges}>
+          <div className={styles.badge}>
+            <i className="icon-transmission"></i>
+            <span className={styles.capitalize}>{camper.transmission}</span>
+          </div>
+
+          <div className={styles.badge}>
+            <i className="icon-engine"></i>
+            <span className={styles.capitalize}>{camper.engine}</span>
+          </div>
+
+          {camper.kitchen && (
+            <div className={styles.badge}>
+              <i className="icon-kitchen"></i> Kitchen
+            </div>
+          )}
+
+          {camper.AC && (
+            <div className={styles.badge}>
+              <i className="icon-ac"></i> AC
+            </div>
+          )}
+        </div>
+
         <Link
           to={`/catalog/${camper.id}`}
           target="_blank"

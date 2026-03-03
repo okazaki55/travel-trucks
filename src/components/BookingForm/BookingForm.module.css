@@ -1,30 +1,22 @@
-.formWrapper {
-  width: 448px;
-  border: 1px solid #dadde1;
+.container {
+  background-color: #ffffff;
   border-radius: 10px;
-  padding: 44px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.formHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  border: 1px solid #dadde1;
+  padding: 24px;
+  font-family: "Inter", sans-serif;
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
   color: #101828;
-  margin: 0;
+  margin: 0 0 8px 0;
 }
 
 .subtitle {
   font-size: 16px;
   color: #475467;
-  margin: 0;
+  margin: 0 0 24px 0;
 }
 
 .form {
@@ -33,80 +25,49 @@
   gap: 14px;
 }
 
+/* Hem normal inputlar hem de takvim wrapper'ı için */
 .input {
   width: 100%;
   padding: 18px;
   background-color: #f7f7f7;
   border: none;
   border-radius: 10px;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   color: #101828;
   outline: none;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
 }
 
 .input::placeholder {
   color: #475467;
 }
 
-.input[type="date"] {
-  color: #475467;
-}
-.input[type="date"]:valid {
-  color: #101828;
-}
-
 .textarea {
-  width: 100%;
-  padding: 18px;
-  background-color: #f7f7f7;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  color: #101828;
-  outline: none;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  resize: none;
   height: 114px;
+  resize: none;
 }
 
-.textarea::placeholder {
-  color: #475467;
-}
-
-.submitBtn {
-  padding: 16px 60px;
-  background-color: #e44848;
-  color: white;
-  border: none;
-  border-radius: 200px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  align-self: flex-start;
+/* Butonu ortalamak için kapsayıcı */
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin-top: 10px;
 }
 
+.submitBtn {
+  background-color: #e44848;
+  color: #ffffff;
+  border: none;
+  border-radius: 200px;
+  padding: 16px 60px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
 .submitBtn:hover {
-  background-color: #d84343;
-}
-
-@media (max-width: 1024px) {
-  .formWrapper {
-    width: 100%;
-    padding: 32px 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  .formWrapper {
-    padding: 24px 16px;
-  }
-
-  .submitBtn {
-    width: 100%;
-  }
+  background-color: #d83b3b;
 }
