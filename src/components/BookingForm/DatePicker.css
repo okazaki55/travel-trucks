@@ -1,9 +1,7 @@
-/* Takvim İkonu - placeholder'ın yanındaki */
 .input-with-icon {
   position: relative;
 }
 .input-with-icon::after {
-  /* Senin kodundaki SVG ikonunu buraya tam olarak yapıştırabilirsin */
   content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z' stroke='%23101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 2V6' stroke='%23101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 2V6' stroke='%23101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 10H21' stroke='%23101828' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   position: absolute;
   right: 18px;
@@ -12,7 +10,6 @@
   pointer-events: none;
 }
 
-/* Takvim Konteyneri - Figma'daki gibi */
 .react-datepicker {
   font-family: "Inter", sans-serif !important;
   border: 1px solid #dadde1 !important;
@@ -22,7 +19,6 @@
   padding: 18px !important;
 }
 
-/* Takvim Başlığı */
 .react-datepicker__header {
   background-color: #ffffff !important;
   border-bottom: none !important;
@@ -37,7 +33,6 @@
   border-color: #101828 !important;
 }
 
-/* Gün Adları */
 .react-datepicker__day-names {
   margin-top: 10px !important;
 }
@@ -48,7 +43,6 @@
   line-height: 40px !important;
 }
 
-/* Günler */
 .react-datepicker__day {
   font-size: 14px !important;
   color: #101828 !important;
@@ -61,14 +55,12 @@
   background-color: #f7f7f7 !important;
 }
 
-/* Seçili Gün */
 .react-datepicker__day--selected,
 .react-datepicker__day--keyboard-selected {
   background-color: #101828 !important;
   color: #ffffff !important;
 }
 
-/* Başka Aya Ait Günler */
 .react-datepicker__day--outside-month {
   color: rgba(71, 84, 103, 0.4) !important;
 }

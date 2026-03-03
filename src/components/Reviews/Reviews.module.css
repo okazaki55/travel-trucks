@@ -1,7 +1,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Yorumlar arası boşluk */
+  gap: 24px;
 }
 
 .reviewItem {
@@ -16,13 +16,12 @@
   gap: 16px;
 }
 
-/* İsmin baş harfinin göründüğü yuvarlak avatar */
 .avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #f2f4f7; /* Açık gri arkaplan */
-  color: #e44848; /* Kırmızı harf rengi */
+  background-color: #f2f4f7;
+  color: #e44848;
   display: flex;
   align-items: center;
   justify-content: center;
