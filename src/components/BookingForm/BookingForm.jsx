@@ -13,6 +13,8 @@ const BookingForm = () => {
     comment: "",
   });
 
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -23,7 +25,20 @@ const BookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("Gönderilen Rezervasyon:", formData);
+
+    setFormData({
+      name: "",
+      email: "",
+      date: null,
+      comment: "",
+    });
+
+    setShowSuccess(true);
+
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 3000);
   };
 
   return (
@@ -80,6 +95,12 @@ const BookingForm = () => {
             Send
           </button>
         </div>
+
+        {showSuccess && (
+          <div className={styles.successToast}>
+            🎉 Your request has been sent successfully!
+          </div>
+        )}
       </form>
     </div>
   );
